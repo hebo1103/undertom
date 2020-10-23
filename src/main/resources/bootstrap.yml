@@ -1,0 +1,14 @@
+spring:
+  application.name: undertom
+  main.allow-bean-definition-overriding: true
+  cloud.nacos.config:
+    server-addr: 192.168.254.232:8848
+    namespace: dev
+    group: dev
+    file-extension: yml
+    enabled: false
+  profiles:
+    active: local
+crisps.nacos.config:
+  env: dev
+

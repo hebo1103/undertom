@@ -1,0 +1,28 @@
+management:
+  health:
+    elasticsearch:
+      enabled: false
+server:
+  port: 9652
+spring:
+  data:
+    elasticsearch:
+      cluster-name: docker-cluster
+      cluster-nodes: 192.168.254.223:9200
+      repositories:
+        enabled: true
+  elasticsearch:
+    rest:
+      uris: http://192.168.254.223:9200
+xxl:
+  job:
+    accessToken: ''
+    admin:
+      addresses: http://192.168.254.177:8521/xxl-job-admin/
+    executor:
+      address: ''
+      appname: executorDemo
+      ip: 172.16.133.148
+      logpath: /data/applogs/xxl-job/jobhandler
+      logretentiondays: 30
+      port: 9999
