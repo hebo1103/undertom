@@ -4,6 +4,7 @@ import com.example.demo.model.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ApplicationContext;
 
 import java.time.LocalDate;
@@ -17,6 +18,7 @@ import java.util.Optional;
  * @date 2016/10/31
  */
 @SpringBootApplication(scanBasePackages = {"com.example.*"})
+@ServletComponentScan
 @Slf4j
 public class UndertowApplication {
 

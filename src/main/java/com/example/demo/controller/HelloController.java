@@ -40,7 +40,6 @@ public class HelloController {
         order.setSource(str);
         order.setPayMethod("");
         orderService2.orderService(order);
-        throw new InterruptedException();
-//        return orderService.orderService(order);
+        return orderService.orderService(order);
     }
 }

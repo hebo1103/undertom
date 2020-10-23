@@ -13,7 +13,7 @@ import java.io.IOException;
  * @data 2020/9/16 11:02
  * @Description: 控制层
  */
-@WebServlet(urlPatterns = "/asyncServlet", asyncSupported = true)
+//@WebServlet(urlPatterns = "/asyncServlet", asyncSupported = true)
 public class AsyncServlet {
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response) throws ServletException, IOException {
