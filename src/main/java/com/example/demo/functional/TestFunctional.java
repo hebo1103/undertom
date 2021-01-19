@@ -13,7 +13,10 @@ public class TestFunctional {
 
     public Integer testFunctional1() {
         TestFunctionInterface<String, Integer> stringIntegerTestFunctionInterface = a -> Integer.valueOf(a + 1);
-        Integer in = test1(() -> stringIntegerTestFunctionInterface.getInfo("23"));
+//        Integer in = test1(() -> stringIntegerTestFunctionInterface.getInfo("23"));
+        TestClass<Integer> testClass = new TestClass();
+        testClass.o = 100;
+        Integer in = test1(testClass::call);
         System.out.println("stringIntegerTestFunctionInterface:" + in);
         return in;
     }
@@ -25,5 +28,14 @@ public class TestFunctional {
             e.printStackTrace();
         }
         return null;
+    }
+
+    class TestClass<M> {
+        M o;
+
+        M call() {
+            Boolean f = Boolean.TRUE;
+            return o;
+        }
     }
 }

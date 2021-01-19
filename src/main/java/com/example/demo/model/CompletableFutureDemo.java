@@ -7,7 +7,7 @@ package com.example.demo.model;
  */
 public class CompletableFutureDemo {
 
-    public static String name() {
+    public static String name(String ij) {
         try {
             System.out.println("获取姓名开始");
             Thread.sleep(9000);

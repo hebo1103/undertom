@@ -32,7 +32,7 @@ public class CompletableFutureExampleController {
                 namedThreadFactory,
                 new ThreadPoolExecutor.AbortPolicy());
         Man man = new Man();
-        CompletableFuture<String> future1 = CompletableFuture.supplyAsync(CompletableFutureDemo::name, threadPool);
+        CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> CompletableFutureDemo.name (""), threadPool);
         CompletableFuture<Integer> future2 = CompletableFuture.supplyAsync(CompletableFutureDemo::age, threadPool);
         CompletableFuture<String> future3 = CompletableFuture.supplyAsync(CompletableFutureDemo::sex, threadPool);
 

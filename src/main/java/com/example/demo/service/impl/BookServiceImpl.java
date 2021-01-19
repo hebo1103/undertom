@@ -1,5 +1,6 @@
 package com.example.demo.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.example.demo.bean.MyEsTemplate;
 import com.example.demo.model.BookBean;
 import com.example.demo.repository.BookRepository;
@@ -98,6 +99,7 @@ public class BookServiceImpl implements BookService {
         searchSourceBuilder.query(queryBuilders).aggregation(termsAggregationBuilder).from(0).size(1);
 //解析返回的数据
         SearchResponse response = getSearchResponse(searchSourceBuilder);
+        System.out.println("=============" + JSON.toJSONString(response));
         Terms agg = response.getAggregations().get("agg");
         for (Terms.Bucket bucket : agg.getBuckets()) {
             TopHits top = bucket.getAggregations().get("top");

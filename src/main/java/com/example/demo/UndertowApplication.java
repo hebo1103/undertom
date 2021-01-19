@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.functional.TestFunctional;
 import com.example.demo.model.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -44,8 +45,8 @@ public class UndertowApplication {
 //        String i = "1";
 //        Boolean fla = i.matches(reg);
         //测试java8的函数式编程
-//        TestFunctional testFunctional = new TestFunctional();
-//        testFunctional.testFunctional1();
+        TestFunctional testFunctional = new TestFunctional();
+        testFunctional.testFunctional1();
         //测试方法引用
         Person[] pArr = new Person[]{
                 new Person("003", LocalDate.of(2016, 9, 1)),

@@ -6,10 +6,11 @@ import com.example.demo.designpatterns.apiImpl.strategy2.OrderService2;
 import com.example.demo.model.OrderStrategy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.time.Duration;
 
 /**
  * @author HB
@@ -41,5 +42,23 @@ public class HelloController {
         order.setPayMethod("");
         orderService2.orderService(order);
         return orderService.orderService(order);
+    }
+
+
+    @RequestMapping("/test/mono/{who}")
+    @ResponseBody
+    public Mono<String> testMono(@PathVariable String who) {
+        return Mono.just(who)
+                .map(w -> "Hello " + w + "!");
+    }
+
+    public Flux<String> alphabet5(char from) {
+        return Flux.range((int) from, 5)
+                .map(i -> "" + (char) i.intValue());
+    }
+
+    public Mono<String> withDelay(String value, int delaySeconds) {
+        return Mono.just(value)
+                .delaySubscription(Duration.ofSeconds(delaySeconds));
     }
 }
